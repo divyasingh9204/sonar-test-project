@@ -44,7 +44,7 @@ pipeline {
                  steps {
                     echo 'Deploying the change....'
                     //snDevOpsChange(ignoreErrors:false)
-		   // snDevOpsChange(changeRequestDetails: """
+		    snDevOpsChange(changeRequestDetails: """
                 {
                     "setCloseCode": false,
                     "pollingInterval":"10",
