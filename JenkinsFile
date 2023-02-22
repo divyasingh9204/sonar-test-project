@@ -48,6 +48,8 @@ pipeline {
                 {
                     "setCloseCode": false,
                     "pollingInterval":"10",
+		    "changeCreationTimeOut":"30",
+                    "abortOnChangeCreationFailure": true,
                     "attributes": {
                         "requested_by": {
                         "name": "DevOps System"
@@ -62,7 +64,13 @@ pipeline {
                 }""")
                  }
       }
-
+stage('PostDeploy') {
+           steps {
+              sh 'post deploy'
+           }
+        
+       }
+       
  }
  
 }
