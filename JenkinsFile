@@ -34,8 +34,8 @@ pipeline {
 		steps {
                     //sonarSummaries()
 		    script{
-		      // sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=sunilyerubandi_DemoMavenProject -Dsonar.organization=sunilyerubandi -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8f73ecadbe478e324214c741569315dddfa01ee5 -Dsonar.java.binaries=target/ -Dsonar.branch.name=master'
-		   sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=testProject-DIVYA_TestPipelineUI -Dsonar.organization=testproject-divya -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=35aa64e79ad67caaf44542dde13aa05f9eef1b32 -Dsonar.java.binaries=target/ -Dsonar.branch.name=master'
+		       sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=sunilyerubandi_DemoMavenProject -Dsonar.organization=sunilyerubandi -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8f73ecadbe478e324214c741569315dddfa01ee5 -Dsonar.java.binaries=target/ -Dsonar.branch.name=master'
+		   //sh '${SCANNER_HOME}/bin/sonar-scanner -Dsonar.projectKey=testProject-DIVYA_TestPipelineUI -Dsonar.organization=testproject-divya -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=35aa64e79ad67caaf44542dde13aa05f9eef1b32 -Dsonar.java.binaries=target/ -Dsonar.branch.name=master'
 
 		   }
                     snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"${env.BRANCH_NAME}"}""")
