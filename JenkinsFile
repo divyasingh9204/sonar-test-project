@@ -63,7 +63,7 @@ pipeline {
       }
 stage('PostDeploy') {
            steps {
-              sh 'post deploy'
+              echo 'post deploy'
            }
         
        }
