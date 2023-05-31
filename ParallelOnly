@@ -19,9 +19,9 @@ pipeline {
     tools{
         maven "Maven"
     }
-    environment{
-        SCANNER_HOME=tool "sonarScanner"
-    }
+//    environment{
+ //       SCANNER_HOME=tool "sonarScanner"
+   // }
     stages {
 
         stage('STAGE1_PARENT') {
@@ -36,7 +36,7 @@ pipeline {
                     post{
                         success{
                             echo "TEST SUCCESS"
-                            junit "**/target/surefire-reports/*.xml"
+                           // junit "**/target/surefire-reports/*.xml"
                         }
                     }
                 }
@@ -52,7 +52,7 @@ pipeline {
                     post{
                         success{
                             echo "TEST SUCCESS"
-                            junit "**/target/surefire-reports/*.xml"
+                           // junit "**/target/surefire-reports/*.xml"
                         }
                     }
                 }
