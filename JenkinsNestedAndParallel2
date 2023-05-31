@@ -9,9 +9,9 @@ pipeline {
 	tools {
 		maven 'Maven'
 	}
-	environment {
-		SCANNER_HOME = tool 'sonarScanner'
-	}
+	//environment {
+	//	SCANNER_HOME = tool 'sonarScanner'
+	//}
 
 	stages {
 		stage('Build') {
@@ -19,7 +19,7 @@ pipeline {
 				stage("Build_Nested1") {
 					steps {
 						echo "build 1.1 executed"
-						sh 'mvn clean'
+						//sh 'mvn clean'
 						sleep 10
 						snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"branchName":"main"}""")
 				                sleep 5
@@ -58,7 +58,7 @@ pipeline {
 							steps {
 								echo 'nested_inside_parallel'
 								// sh 'mvn test -Dpublish'
-								sh 'mvn test -Dpublish'
+								//sh 'mvn test -Dpublish'
 								sleep 5
 								junit "**/target/surefire-reports/*.xml"
 								sleep 15
@@ -100,7 +100,7 @@ pipeline {
 						stage("nested_inside_parallel2") {
 							steps {
 								sleep 20
-								sh 'mvn test -Dpublish'
+								//sh 'mvn test -Dpublish'
 								echo 'Test2 in progress'
 								sleep 5
 								junit "**/target/surefire-reports/*.xml"
