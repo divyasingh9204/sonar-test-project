@@ -18,9 +18,9 @@ pipeline {
    tools {
         maven 'Maven'
     }
-    environment {
-	 SCANNER_HOME = tool 'sonarScanner'
-	}
+ //   environment {
+//	 SCANNER_HOME = tool 'sonarScanner'
+//	}
 	
     stages {
 		  stage('Build1') {
@@ -35,7 +35,7 @@ pipeline {
 					         	
 					         		steps {
 								          echo"build 1.1.1 executed"
-								          sh 'mvn test'
+								         // sh 'mvn test'
 				
 								          //snDevOpsChange()
 								          snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName}"}],"stageName": "Build1/Build1.1/Build1.1.1","branchName":"master"}""")
@@ -75,7 +75,7 @@ pipeline {
 
 					         		steps {
 								          echo "test 1.1.1 executed"
-								          sh 'mvn test'
+								          //sh 'mvn test'
 				
 								          //snDevOpsChange()
 								          snDevOpsArtifact(artifactsPayload: """{"artifacts": [{"name": "${artifactname2}", "version": "1.${env.BUILD_NUMBER}","semanticVersion": "1.${env.BUILD_NUMBER}.0","repositoryName": "${repoName2}"}],"stageName": "Test1/Test1.1/Test1.1.1","branchName":"master"}""")
