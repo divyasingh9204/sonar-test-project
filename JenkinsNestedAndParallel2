@@ -60,13 +60,13 @@ pipeline {
 								// sh 'mvn test -Dpublish'
 								//sh 'mvn test -Dpublish'
 								sleep 5
-								junit "**/target/surefire-reports/*.xml"
+								//junit "**/target/surefire-reports/*.xml"
 								sleep 15
 							}
 							post {
 								success {
 									echo 'Test1-success'
-									junit "**/target/surefire-reports/*.xml"
+									//junit "**/target/surefire-reports/*.xml"
 								}
 							}
 						}
@@ -103,7 +103,7 @@ pipeline {
 								//sh 'mvn test -Dpublish'
 								echo 'Test2 in progress'
 								sleep 5
-								junit "**/target/surefire-reports/*.xml"
+								//junit "**/target/surefire-reports/*.xml"
 								sleep 15
 								//snDevOpsChange()
 								snDevOpsChange(changeRequestDetails: """
@@ -128,7 +128,7 @@ pipeline {
 							post {
 								success {
 									echo 'Test2-success'
-									junit "**/target/surefire-reports/*.xml"
+									//junit "**/target/surefire-reports/*.xml"
 								}
 							}
 						}
