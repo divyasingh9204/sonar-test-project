@@ -45,6 +45,7 @@ pipeline {
 			} // end of stages
 		} // end of build1
 
+
 		stage('Test') {
 			parallel {
 				stage('parallelTest1') {
